@@ -1,15 +1,18 @@
-#워크플로우의 이름지정
+# 워크 플로우의 이름 지정
 name: Main_Workflows
-#워크 플로우의 특징정의
+# 워크 플로우의 특징 정의
+# main 에 push 했을 때 발생, develop에 pr했을 때 발생
 on:
   push:
     branches:
       - main
-
+  pull_request:
+    branches:
+      - main
 #job
-job:
+jobs:
   test:
-    run-on: ubuntu-lastest
-    step:
-    -name: print Hello
-      run : echo"test"
+    runs-on: ubuntu-latest
+    steps:
+      - name: print hello
+        run: echo "test"
