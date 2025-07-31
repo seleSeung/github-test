@@ -1,0 +1,15 @@
+#워크플로우의 이름지정
+name: Main_Workflows
+#워크 플로우의 특징정의
+on:
+  push:
+    branches:
+      - main
+
+#job
+job:
+  test:
+    run-on: ubuntu-lastest
+    step:
+    -name: print Hello
+      run : echo"test"
